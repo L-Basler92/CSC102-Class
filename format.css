@@ -1,0 +1,78 @@
+/* 
+decloration blocks control properties on page such as visuals and text format
+structure like below; 
+Selector{
+    property: value;
+    property2: value
+}
+*/
+body{ 
+    background-color: rgb(225, 153, 19);
+    color: rgb(247, 238, 207); 
+
+}
+ /* add color, font, text align, and size all to h1 */
+        
+  /* add color, font family, text align and size to p */
+p{
+    color:rgb(13, 69, 147); 
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif; 
+    text-align: left; 
+    margin-left: 10em;
+    size: 20em;
+}
+            /* add color, font, font style, text size, and list type/position to new list */
+            /* ul is a typle of list with bullet points not numbers */
+ul{
+    color:rgb(11, 5, 75); 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic; 
+    size: 20em;
+    text-align: left;
+    /* this is the specific list customization like type of bullet and postion of text for list */
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+nav{
+    /* nav style for the navigation bar */
+    /* hight for the box of navigation */
+    Height: 600px;
+    /* width for the nav bar */
+    Width: 100px;
+    /* how it is positioned on the page */
+    float: left;
+    /* added padding and line height for better readability */
+    padding: 5px;
+    line-height: 30px;
+}
+
+footer{
+    /* style for the footer*/
+    /* how its aligned on the page */
+    text-align: center;
+    /* giving a right margin for better readability */
+    margin-right: 200px;
+
+}
+
+#programmingmeme{
+    /* image style to adjust positioning and size */
+    /* margin on top and right for better location on the page */
+    margin-top: 100px;
+    margin-right: 200px;
+    /* adjusting the width of the image to better fit it on the page */
+    width:400px;
+
+}
+
+h1{
+     /* color for text */
+    color:rgb(13, 47, 93);
+    /*font types to text */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* align text to center or another position  */
+    text-align: center;
+    /*  adjust size using different units - using em to keep the look consistant */
+    size: 50em;
+}
