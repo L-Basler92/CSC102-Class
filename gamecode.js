@@ -6,9 +6,9 @@ function randomnumber() {
     return Math.floor(Math.random() * 44) + 1;
 }
 // this funtion prompts the user for a number, generates a random number, and then sums them together.
-// lets a user input a number between 1 and 44
-function sumWithPrompt() {
 
+function sumWithPrompt() {
+// lets a user input a number between 1 and 44
 let num1 = prompt("Enter your first number between 1 and 30:");
 
 
