@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeviJavaGame</title>
+    <!-- script links the html to the javascript -->
+    <script src="gamecode.js"></script>
+    <!-- link to the CSS file -->
+    <link rel="stylesheet" href="format.css">
+
+</head>
+<body>
+    <header>
+        <!-- header for the game updated when clicked -->
+        <h1 id="heading">LeviJavaGame</h1>
+        <!-- click me first to update the header to explain the game -->
+        <button onclick="updatetext();">Click Me First!</button>
+        <!--  starts the game funtion from the javascript page -->
+        <button onclick="sumWithPrompt();">Play Game!</button>
+        <h2>
+        <nav>
+            <!-- links the boards and index pages to the game -->
+            <a href="index.html">Home </a><br>
+            <a href="boards.html">Boards</a><br>
+            <a href="fungame.html">Game</a><br>
+               
+        </nav>
+
+        </h2>
+
+
+    </header> 
+    <!-- displays the results of the game as a paragraph style controlled by .css page created earlier -->
+    <p id="yournumbers"></p>
+
+</body>
+</html>
