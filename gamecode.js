@@ -39,3 +39,46 @@ else if (sum >= 46)  {
     outputElement.innerHTML += "Too high! Try again.";
 }
 }
+// this functions validated user imput and alerts if the name is too short or if the zip code is not 5 digits long or not a number. If the input is valid, it displays a secret message on the page.
+function validateInput(event){
+    event.preventDefault();
+    // user inputs first name
+    let firstName = document.getElementById("fname").value;
+    
+    //user inputs last name
+    let lastName = document.getElementById("lname").value;
+    
+    // user inputs zip code
+    let zipcode = document.getElementById("zipcode").value;
+    
+    // combines first and last name to check the total length of the name
+    let firstLast = firstName + " " + lastName;
+    // boolean variable to check if the input is valid
+    let isValid = false;
+    
+    // loop started to keep prompting the user until they enter valid input
+    while (!isValid)
+        // first input validation check for name length
+        if(firstLast.length <20){
+        alert("not enough charachters. Name must be at least 20 characters long");
+            break;
+        }
+        // next input validation checks for zipcode length and if it is a number
+       else if (zipcode.length != 5 || (!Number.isInteger(parseInt(zipcode)) && parseInt(zipcode) > 99999)){
+        alert("Zipcode must be a 5 digit number");
+            break;
+        }
+        //outputs the secret message if the input is valid
+        else if (!isValid) {
+            outputElement = document.getElementById("stringresults");
+            outputElement.innerHTML = `The secret message is: "This class is fun!"`;
+            break;
+    }
+}
+    // event listeners for the buttons and form submission
+    window.addEventListener("DOMContentLoaded", (event) => {
+        const form = document.getElementById("form1");
+        if (form) {
+        form.addEventListener("submit", validateInput);
+    } 
+});
