@@ -59,8 +59,8 @@ function validateInput(event){
     // loop started to keep prompting the user until they enter valid input
     while (!isValid)
         // first input validation check for name length
-        if(firstLast.length <20){
-        alert("not enough charachters. Name must be at least 20 characters long");
+        if(firstLast.length >20){
+        alert("To many charachters. Name must not be more then 20 characters long");
             break;
         }
         // next input validation checks for zipcode length and if it is a number
