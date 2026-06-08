@@ -82,3 +82,52 @@ function validateInput(event){
         form.addEventListener("submit", validateInput);
     } 
 });
+
+let element 
+let start
+
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    element = document.getElementById("programmingmeme");
+
+    const form = document.getElementById("submitButton");
+    if (form) {
+        form.addEventListener("onclick", validateInput)
+        
+    }});
+
+
+function step(timestamp) 
+{
+    if (start === undefined) {
+        start = timestamp;
+    }
+    const elapsed = timestamp - start;
+        
+        const shift = Math.min(0.1 * elapsed, 10000000);
+        element.style.transform = `translateX(${shift}px)`;
+        requestAnimationFrame(step);
+      
+}
+
+function startMove() 
+{    
+       requestAnimationFrame(step);
+        toggleButtons(true);
+    
+
+}
+function stopMove() 
+{       const form = document.getElementById("submitButton2");
+    if (form) {
+        form.addEventListener("onclick", validateInput)
+        cancelAnimationFrame(step);
+        toggleButtons(false);
+
+}}
+function toggleButtons(isRunning) {
+  const startButton = document.getElementById("submitButton");
+  const stopButton = document.getElementById("submitButton2"); 
+  startButton.disabled = isRunning;
+  stopButton.disabled = !isRunning;
+}
