@@ -1,3 +1,5 @@
+//Levi Basler 6/8/2026
+
 function updatetext(){
     document.getElementById("heading").innerHTML = "Try to get 45!";
 }
@@ -83,47 +85,56 @@ function validateInput(event){
     } 
 });
 
-let element 
-let start
-let animation
+let element // creates a global variable to store the image element
+let start // global for the start time of the animation
+let animation // global for the animation frame request ID, used to stop the animation
 
-
+// event listener to start the animation when the DOM contest is loaded and to get the image element by its ID. Also adds event listeners to the start and stop buttons.
 window.addEventListener("DOMContentLoaded", (event) => {
     element = document.getElementById("programmingmeme");
-
+    // adds event listeners to the form to start the animation when the start button is clicked and to stop the animation when the stop button is clicked
     const form = document.getElementById("submitButton");
     if (form) {
         form.addEventListener("onclick", validateInput)
         
     }});
 
-
+// this function is called on each frame of the animation. It calculates the elapsed time since the animation started and updates the position of the image based on that time. The animation continues until it is stopped by the user.
 function step(timestamp) 
 {
+    // if the start time is not set, set it to the current timestamp
     if (start === undefined) {
         start = timestamp;
     }
+    // calculates the elapsed time since the animation started
     const elapsed = timestamp - start;
-        
+    // calculates the shift in position based on the elapsed time, with a maximum shift of 1000 pixels    
     const shift = Math.min(0.1 * elapsed, 1000)
     element.style.transform = `translateX(${shift}px)`;
     animation = requestAnimationFrame(step);
       
 }
-
+// this function starts the animation by requesting the first animation frame and toggling the buttons to disable the start button and enable the stop button.
 function startMove() 
 {    
+    // resets the start time to undefined to start the animation from the beginning
+    start = undefined;
     requestAnimationFrame(step);
+    // toggles the buttons to disable the start button and enable the stop button
     toggleButtons(true);
     
 
 }
+// this function stops the animation by canceling the animation frame request and toggling the buttons to enable the start button and disable the stop button.
 function stopMove() 
 {    
+    // cancels the animation frame request to stop the animation
     cancelAnimationFrame(animation);
+    // toggles the buttons to enable the start button and disable the stop button
     toggleButtons(false);
 
 }
+// this function toggles the disabled state of the start and stop buttons based on whether the animation is running or not. If the animation is running, the start button is disabled and the stop button is enabled. If the animation is not running, the start button is enabled and the stop button is disabled.
 function toggleButtons(isRunning) {
     const startButton = document.getElementById("submitButton");
     const stopButton = document.getElementById("submitButton2"); 
