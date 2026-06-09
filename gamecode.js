@@ -85,6 +85,7 @@ function validateInput(event){
 
 let element 
 let start
+let animation
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -104,30 +105,28 @@ function step(timestamp)
     }
     const elapsed = timestamp - start;
         
-        const shift = Math.min(0.1 * elapsed, 10000000);
-        element.style.transform = `translateX(${shift}px)`;
-        requestAnimationFrame(step);
+    const shift = Math.min(0.1 * elapsed, 1000)
+    element.style.transform = `translateX(${shift}px)`;
+    animation = requestAnimationFrame(step);
       
 }
 
 function startMove() 
 {    
-       requestAnimationFrame(step);
-        toggleButtons(true);
+    requestAnimationFrame(step);
+    toggleButtons(true);
     
 
 }
 function stopMove() 
-{       const form = document.getElementById("submitButton2");
-    if (form) {
-        form.addEventListener("onclick", validateInput)
-        cancelAnimationFrame(step);
-        toggleButtons(false);
+{    
+    cancelAnimationFrame(animation);
+    toggleButtons(false);
 
-}}
+}
 function toggleButtons(isRunning) {
-  const startButton = document.getElementById("submitButton");
-  const stopButton = document.getElementById("submitButton2"); 
-  startButton.disabled = isRunning;
-  stopButton.disabled = !isRunning;
+    const startButton = document.getElementById("submitButton");
+    const stopButton = document.getElementById("submitButton2"); 
+    startButton.disabled = isRunning;
+    stopButton.disabled = !isRunning;
 }
