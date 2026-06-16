@@ -7,7 +7,7 @@ Selector{
 }
 */
 body{ 
-    background-color: rgb(225, 153, 19);
+    background-color: rgb(241, 139, 15);
     color: rgb(247, 238, 207); 
 
 }
@@ -39,7 +39,7 @@ nav{
     /* hight for the box of navigation */
     Height: 600px;
     /* width for the nav bar */
-    Width: 100px;
+    Width: 125px;
     /* how it is positioned on the page */
     float: left;
     /* added padding and line height for better readability */

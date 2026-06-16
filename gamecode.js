@@ -1,4 +1,4 @@
-//Levi Basler 6/8/2026
+//Levi Basler 6/14/2026
 
 function updatetext(){
     document.getElementById("heading").innerHTML = "Try to get 45!";
@@ -42,8 +42,8 @@ else if (sum >= 46)  {
 }
 }
 // this functions validated user imput and alerts if the name is too short or if the zip code is not 5 digits long or not a number. If the input is valid, it displays a secret message on the page.
-function validateInput(event){
-    event.preventDefault();
+function validateInput(event1){
+    event1.preventDefault();
     // user inputs first name
     let firstName = document.getElementById("fname").value;
     
@@ -78,11 +78,11 @@ function validateInput(event){
     }
 }
     // event listeners for the buttons and form submission
-    window.addEventListener("DOMContentLoaded", (event) => {
-        const form = document.getElementById("form1");
-        if (form) {
-        form.addEventListener("submit", validateInput);
-    } 
+    window.addEventListener("DOMContentLoaded", (event1) => {
+        const form1 = document.getElementById("form1");
+        if (form1) {
+            form1.addEventListener("submit", validateInput);
+        }
 });
 
 let element // creates a global variable to store the image element
@@ -90,7 +90,7 @@ let start // global for the start time of the animation
 let animation // global for the animation frame request ID, used to stop the animation
 
 // event listener to start the animation when the DOM contest is loaded and to get the image element by its ID. Also adds event listeners to the start and stop buttons.
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", (event2) => {
     element = document.getElementById("programmingmeme");
     // adds event listeners to the form to start the animation when the start button is clicked and to stop the animation when the stop button is clicked
     const form = document.getElementById("submitButton");
@@ -141,3 +141,45 @@ function toggleButtons(isRunning) {
     startButton.disabled = isRunning;
     stopButton.disabled = !isRunning;
 }
+
+// new fuction for Plaindrome button 
+function validateInput1(event3){
+    event3.preventDefault();
+    // setting globals for palindrome 
+    let Palindrome = document.getElementById("palindrome").value;
+
+     // removes non-letter characters and converts to lowercase
+    let palindromcheck = Palindrome.toLowerCase().replace(/[^a-z]/g, "");
+
+    // reverses the cleaned string
+    let reversed = palindromcheck.split("").reverse().join(""); 
+    // outputelement to connect to HTML to display results 
+    let outputElement = document.getElementById("palindromeresults");
+    // Boolian set
+    let isValid = false;
+
+// loop creation for propting user to input data before moving forward 
+    while (!isValid) 
+        // Checking length of word 
+        if (palindromcheck.length < 3) {
+        alert("Palindrome must be at least 3 characters long and contain only letters");
+            return;
+        // Checks if its the same forward and backwards, output and  diplays message if true
+        } else if (palindromcheck === reversed) {
+        outputElement.innerHTML = `The secret message is: "You found the palindrome!"`;
+        isValid = true;
+            return;
+        // if not the same forward as backwards, output display message to try again
+        } else if (palindromcheck !== reversed) {
+        outputElement.innerHTML = `The secret message is: "Not a palindrome, try again!"`;
+           return;
+
+    }
+}   
+    // Event listener for button command
+window.addEventListener("DOMContentLoaded", (event3) => {
+    const form2 = document.getElementById("form2");
+    if (form2) {
+    form2.addEventListener("submit", validateInput1);
+    
+}});
