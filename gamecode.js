@@ -1,4 +1,4 @@
-//Levi Basler 6/14/2026
+//Levi Basler 6/21/2026
 
 function updatetext(){
     document.getElementById("heading").innerHTML = "Try to get 45!";
@@ -183,3 +183,15 @@ window.addEventListener("DOMContentLoaded", (event3) => {
     form2.addEventListener("submit", validateInput1);
     
 }});
+
+// Play music funtion when button is clicked 
+var myAudio = new Audio("funmusic/jazzfunk.mp3");
+// The funtion that starts the music
+function playmusic() {
+    // Linking the play buttion to the function
+    myAudio.play();
+    // Linking the myAudioElement to the button and play function
+    var myAudioElement = document.getElementById("myAudio");
+    myAudioElement.play();
+
+}
