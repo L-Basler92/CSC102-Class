@@ -195,3 +195,49 @@ function playmusic() {
     myAudioElement.play();
 
 }
+
+//6.2 Assignment 
+// funtion to validate input from form
+function validateInput(event4){
+    event4.preventDefault();
+// global for first linked to "animal" from form and sliced to 3 letters
+let first = document.getElementById("Animal").value.slice(0, 3);
+// global for middle linked to "food" from form and sliced to 3 letters
+let middle = document.getElementById("Food").value.slice(0, 3);
+// global for last linked to "flower" from form and sliced to 3 letters   
+let last = document.getElementById("Flower").value.slice(0, 3);
+//global for funny name grouping first middle last together to make a word
+let funnyname = first + middle + last;
+//global for IsValid
+let isValid = false;
+    //While is true
+    while (!isValid) 
+        // check the legth of first and alert if to short
+        if(first.length <3) {
+        alert("Animal must have 3 letters");
+            break;
+        }
+        // check the legth of middle and alert if to short
+        else if(middle.length <3) {
+        alert("Food must have 3 letters");
+            break;
+        }
+        // check the legths of last and alert if to short
+        else if(last.length <3) {
+        alert("Flower must have 3 letters");
+            break;
+        }
+        //output results to "funnyname" on 6_2.html
+        else if (!isValid) {
+            outputElement = document.getElementById("funnyname");
+            outputElement.innerHTML = funnyname;
+            break;
+        }
+}
+    // event listeners for the buttons and form submission
+window.addEventListener("DOMContentLoaded", (event4) => {
+    const form3 = document.getElementById("form3");
+    if (form3) {
+        form3.addEventListener("submit", validateInput);
+    
+}});

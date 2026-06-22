@@ -52,6 +52,7 @@ footer{
     /* how its aligned on the page */
     text-align: center;
     /* giving a right margin for better readability */
+    margin-top: 45px ;
     margin-right: 200px;
 
 }
@@ -83,3 +84,18 @@ form{
     
 }
     
+/* New formats used for index page */ 
+p1{
+    color:rgb(1, 95, 123); 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left; 
+    margin-left: 10em;
+    size: 20em;
+}
+p3{
+    color:rgb(0, 10, 188); 
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif; 
+    text-align: center;
+    font-size: 30px;
+    
+}
