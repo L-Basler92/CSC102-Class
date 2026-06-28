@@ -54,7 +54,6 @@ footer{
     /* giving a right margin for better readability */
     margin-top: 45px ;
     margin-right: 200px;
-
 }
 
 #programmingmeme{
@@ -64,7 +63,6 @@ footer{
     margin-right: 200px;
     /* adjusting the width of the image to better fit it on the page */
     width:400px;
-
 }
 
 h1{
@@ -80,8 +78,7 @@ h1{
 form{
     color: rgb(15, 3, 142);
     font-size: 18px;
-    font-weight: bold;
-    
+    font-weight: bold;   
 }
     
 /* New formats used for index page */ 
@@ -96,6 +93,23 @@ p3{
     color:rgb(0, 10, 188); 
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif; 
     text-align: center;
-    font-size: 30px;
-    
+    font-size: 30px;   
+}
+main{
+    text-align: center;
+    margin-left: 300px;
+}
+caption {
+    font-size: 25px;
+    font-weight: bold;
+}
+table, th, td {
+    Border: 2px solid rgb(4, 12, 178);
+    color:rgb(1, 95, 123);
+}
+th, td {
+    padding: 10px;
+}
+Table {
+    border-collapse: collapse;
 }
