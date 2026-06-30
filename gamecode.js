@@ -42,7 +42,7 @@ else if (sum >= 46)  {
 }
 }
 // this functions validated user imput and alerts if the name is too short or if the zip code is not 5 digits long or not a number. If the input is valid, it displays a secret message on the page.
-function validateInput(event1){
+function validateInput2(event1) {
     event1.preventDefault();
     // user inputs first name
     let firstName = document.getElementById("fname").value;
@@ -79,9 +79,9 @@ function validateInput(event1){
 }
     // event listeners for the buttons and form submission
     window.addEventListener("DOMContentLoaded", (event1) => {
-        const form1 = document.getElementById("form1");
+        const form1 = document.getElementById("strings");
         if (form1) {
-            form1.addEventListener("submit", validateInput);
+            form1.addEventListener("submit", validateInput2);
         }
 });
 
@@ -143,7 +143,7 @@ function toggleButtons(isRunning) {
 }
 
 // new fuction for Plaindrome button 
-function validateInput1(event3){
+function validateInput1(event3) {
     event3.preventDefault();
     // setting globals for palindrome 
     let Palindrome = document.getElementById("palindrome").value;
@@ -198,7 +198,7 @@ function playmusic() {
 
 //6.2 Assignment 
 // funtion to validate input from form
-function validateInput(event4){
+function validateInput4(event4){
     event4.preventDefault();
 // global for first linked to "animal" from form and sliced to 3 letters
 let first = document.getElementById("Animal").value.slice(0, 3);
@@ -238,6 +238,6 @@ let isValid = false;
 window.addEventListener("DOMContentLoaded", (event4) => {
     const form3 = document.getElementById("form3");
     if (form3) {
-        form3.addEventListener("submit", validateInput);
+        form3.addEventListener("submit", validateInput4);
     
 }});
